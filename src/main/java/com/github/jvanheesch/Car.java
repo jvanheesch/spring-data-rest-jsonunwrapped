@@ -1,7 +1,5 @@
 package com.github.jvanheesch;
 
-import com.fasterxml.jackson.annotation.JsonUnwrapped;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,9 +10,6 @@ public class Car {
     private String name;
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     private Engine engine;
-    @JsonUnwrapped
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-    private SteeringWheel steeringWheel;
 
     public Long getId() {
         return id;
@@ -38,13 +33,5 @@ public class Car {
 
     public void setEngine(Engine engine) {
         this.engine = engine;
-    }
-
-    public SteeringWheel getSteeringWheel() {
-        return steeringWheel;
-    }
-
-    public void setSteeringWheel(SteeringWheel steeringWheel) {
-        this.steeringWheel = steeringWheel;
     }
 }

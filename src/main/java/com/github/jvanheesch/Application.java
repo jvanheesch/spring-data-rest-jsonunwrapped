@@ -22,9 +22,6 @@ public class Application {
         Engine engine = new Engine();
         engine.setName("engineName");
         car.setEngine(engine);
-        SteeringWheel steeringWheel = new SteeringWheel();
-        steeringWheel.setName("steeringWheelName");
-        car.setSteeringWheel(steeringWheel);
         this.carRepository.save(car);
     }
 }
